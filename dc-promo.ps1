@@ -1,4 +1,4 @@
-﻿######
+﻿# dit is omdat iex anders moeilijk doet :)
 Install-windowsfeature -name AD-Domain-Services
 Import-Module ADDSDeployment
 Install-ADDSForest `
