@@ -5,7 +5,7 @@ Install-ADDSForest `
 -DatabasePath "C:\Windows\NTDS" `
 -DomainMode "WinThreshold" `
 -DomainName "WS2-2223-mattias.hogent" `
--DomainNetbiosName "WS2-2223-MATTIAS" `
+-DomainNetbiosName "WS2-2223-MATTI" `
 -ForestMode "WinThreshold" `
 -InstallDns:$true `
 -LogPath "C:\Windows\NTDS" `
