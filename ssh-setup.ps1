@@ -9,3 +9,5 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Wi
 
 # sets ssh default shell to powershell version 7
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "C:\Program Files\PowerShell\7\pwsh.exe" -PropertyType String -Force
+
+Remove-Item -Path "$([Environment]::GetFolderPath('Startup'))\ssh-setup.ps1" -Force
