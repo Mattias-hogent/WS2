@@ -4,6 +4,6 @@ Set-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion\WinLo
 
 Invoke-WebRequest -UseBasicParsing -Uri https://raw.githubusercontent.com/Mattias-hogent/WS2/main/ssh-setup.ps1 -OutFile "$([Environment]::GetFolderPath('Startup'))\ssh-setup.ps1" -ErrorAction Inquire
 # installs updates
-Install-Module -Name PSWindowsUpdate -Force
-Import-Module -Name PSWindowsUpdate -Force
-Get-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot -Install -Force
+Install-Module -Name PSWindowsUpdate -Force -Confirm
+Import-Module -Name PSWindowsUpdate
+Get-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot -Install
