@@ -4,8 +4,8 @@ Set-ItemProperty -Path 'HKLM:\Software\Microsoft\Windows NT\CurrentVersion\WinLo
 
 New-Item -Path C:\temp\log.txt -Force
 
-Invoke-WebRequest -UseBasicParsing -Uri https://raw.githubusercontent.com/Mattias-hogent/WS2/main/ssh-setup.ps1 -OutFile "$([Environment]::GetFolderPath('Startup'))\ssh-setup.ps1" -ErrorAction Continue
-$Error | Out-File c:\temp\log.txt -Append
+Write-Host "$([Environment]::GetFolderPath('Startup'))\ssh-setup.ps1"
+Invoke-WebRequest -UseBasicParsing -Uri https://raw.githubusercontent.com/Mattias-hogent/WS2/main/ssh-setup.ps1 -OutFile "$([Environment]::GetFolderPath('Startup'))\ssh-setup.ps1"
 
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -ErrorAction Continue
 $Error | Out-File c:\temp\log.txt -Append
