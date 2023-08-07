@@ -12,3 +12,4 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -ErrorActio
 Install-Module -Name PSWindowsUpdate -Force
 Import-Module -Name PSWindowsUpdate
 Get-WindowsUpdate -MicrosoftUpdate -AcceptAll -AutoReboot -Install
+Get-WindowsUpdate -WindowsUpdate -AcceptAll -AutoReboot -Install
