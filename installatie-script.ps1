@@ -13,6 +13,6 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSWindowsUpdate -Force
 Import-Module -Name PSWindowsUpdate
 
-&."~\Documents\update.ps1"
+."~\Documents\update.ps1"
 #Get-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot -Install
 #Get-WindowsUpdate -WindowsUpdate -AcceptAll -AutoReboot -Install
