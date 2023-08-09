@@ -11,10 +11,9 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Install-Module -Name PSWindowsUpdate -Force
 Import-Module -Name PSWindowsUpdate
 
-$action = New-ScheduledTaskAction -Execute "C:\Program Files\PowerShell\7\pwsh.exe" -Argument "-command 'Get-WindowsUpdate -WindowsUpdate -AcceptAll -AutoReboot -Install'"
-$trigger = New-ScheduledTaskTrigger -AtStartup
-$task = New-ScheduledTask -Action $action -Trigger $trigger
-Register-ScheduledTask T1 -InputObject $task
+$action = New-ScheduledTaskAction -Execute pwsh.exe -Argument "-Command 'Get-WindowsUpdate -WindowsUpdate -AcceptAll -AutoReboot -Install'"
+$trigger = New-ScheduledTaskTrigger -AtLogOn
+Register-ScheduledTask Update_windows -Action $action -Trigger $trigger
 Restart-Computer
 #Get-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot -Install
 #Get-WindowsUpdate -WindowsUpdate -AcceptAll -AutoReboot -Install
