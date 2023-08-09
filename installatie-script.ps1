@@ -12,5 +12,6 @@ Install-Module -Name PSWindowsUpdate -Force
 Import-Module -Name PSWindowsUpdate
 
 Start-Process 'C:\Program Files\PowerShell\7\pwsh.exe' -ArgumentList "-file ~\Documents\update.ps1"
+Start-Sleep(120)
 #Get-WindowsUpdate -MicrosoftUpdate -AcceptAll -IgnoreReboot -Install
 #Get-WindowsUpdate -WindowsUpdate -AcceptAll -AutoReboot -Install
