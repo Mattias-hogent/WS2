@@ -11,4 +11,5 @@ else {
 function updateWindows {
     $trigger = New-JobTrigger -AtLogOn -User SERVER\Admin
     Register-ScheduledJob -Name "updateWindows" -FilePath "~\Documents\update.ps1" -Trigger $trigger
+    Get-WindowsUpdate -WindowsUpdate -AcceptAll -AutoReboot -Install
 }
