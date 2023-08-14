@@ -1,15 +1,14 @@
-﻿# dit is omdat iex anders moeilijk doet :)
-Install-windowsfeature -name AD-Domain-Services
+﻿Install-windowsfeature -name AD-Domain-Services
 Import-Module ADDSDeployment
 Install-ADDSForest `
--CreateDnsDelegation:$false `
--DatabasePath "C:\Windows\NTDS" `
--DomainMode "WinThreshold" `
--DomainName "WS2-2223-mattias.hogent" `
--DomainNetbiosName "WS2-2223-MATTI" `
--ForestMode "WinThreshold" `
--InstallDns:$true `
--LogPath "C:\Windows\NTDS" `
--NoRebootOnCompletion:$false `
--SysvolPath "C:\Windows\SYSVOL" `
--Force:$true
+    -CreateDnsDelegation:$false `
+    -DatabasePath "C:\Windows\NTDS" `
+    -DomainMode "WinThreshold" `
+    -DomainName "WS2-2223-mattias.hogent" `
+    -DomainNetbiosName "WS2-2223-MATTI" `
+    -ForestMode "WinThreshold" `
+    -InstallDns:$true `
+    -LogPath "C:\Windows\NTDS" `
+    -NoRebootOnCompletion:$false `
+    -SysvolPath "C:\Windows\SYSVOL" `
+    -Force:$true
