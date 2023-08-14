@@ -2,9 +2,11 @@ $Task = "Update_windows"
 $timeout = 60 ##  seconds
 $timer = [Diagnostics.Stopwatch]::StartNew()
 
+Start-Sleep -Seconds  30
+
 while (((Get-ScheduledTask -TaskName $Task).State -ne 'Ready') -and ($timer.Elapsed.TotalSeconds -lt $timeout)) {    
     Write-Verbose  -Message "Waiting on scheduled task..."
-    Start-Sleep -Seconds  3   
+    Start-Sleep -Seconds  10
 }
 $timer.Stop()
 
