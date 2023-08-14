@@ -1,3 +1,15 @@
+$Task = "Update_windows"
+$timeout = 60 ##  seconds
+$timer = [Diagnostics.Stopwatch]::StartNew()
+
+while (((Get-ScheduledTask -TaskName $Task).State -ne 'Ready') -and ($timer.Elapsed.TotalSeconds -lt $timeout)) {    
+    Write-Verbose  -Message "Waiting on scheduled task..."
+    Start-Sleep -Seconds  3   
+}
+$timer.Stop()
+
+Write-Verbose  -Message "We waited [$($timer.Elapsed.TotalSeconds)] seconds on the task 'TaskName'"
+
 # installs openssh server
 Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Server*' | Add-WindowsCapability -Online
 
